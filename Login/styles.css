@@ -15,10 +15,14 @@
 	 width: 350px;
 	 position: relative;
 	 overflow: hidden;
+	 display: flex;
+	 align-items: center;
+	 flex-direction: column;
+	 overflow:hidden;
 }
  .form-structor::after {
 	 content: '';
-	 opacity: 0.6;
+	 opacity: 0.3;
 	 position: absolute;
 	 top: 0;
 	 right: 0;
