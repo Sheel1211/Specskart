@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include "db_conn.php";
+include "../DB/db_conn.php";
 if (isset($_POST['uname']) && isset($_POST['psword']) && isset($_POST['psword1']))
 {
   function validate($data){
@@ -13,12 +13,12 @@ if (isset($_POST['uname']) && isset($_POST['psword']) && isset($_POST['psword1']
   $pass=validate($_POST['psword']);
   
   if(empty($uname)){
-    header("location: index.php?error=Username is required");
+    header("location: ../index.php?error=Username is required");
     exit();
   }
   else if(empty($pass))
   {
-    header("location: index.php?error=Password is required");
+    header("location: ../index.php?error=Password is required");
     exit();
   }
   else{
@@ -38,38 +38,14 @@ if (isset($_POST['uname']) && isset($_POST['psword']) && isset($_POST['psword1']
         
     }
     else{
-        header("location: index.php?error=Username or Password is incorrect");
+        header("location: ../index.php?error=Username or Password is incorrect");
         exit();
     }
   }
 }
 
 else{
-    header("location: index.php");
+    header("location: ../index.php");
     exit();
 }
 ?>
-
-<html>
-<head>
-<title>
-login
-</title>
-<link rel="stylesheet" type="text/css" href="looks.css">
-</head>
-<body>
-<form action="login.php" method="post">
-<h1>Welcome to Specskart</h1>
-<?php
-if(isset($_GET['error'])){ ?>
-<p class="error"><?php echo $_GET['error']; ?></p>
-<?php } ?>
-<label>Username</label>
-<input type="text" name="uname" placeholder="Username">
-<label>Password</label>
-<input type="password" name="psword" placeholder="Password">
-<label>Confirm Password</label>
-<input type="password" name="psword1" placeholder="Password">
-</form>
-</body>
-</html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -58,7 +58,7 @@ foreach ($_SESSION["shopping_cart"] as $product){
 ?>
 <tr>
 <td>
-<img src='<?php echo $product["image"]; ?>' width="50" height="40" />
+<img src='<?php echo "../".$product["image"]; ?>' width="50" height="40" />
 </td>
 <td><?php echo $product["name"]; ?><br />
 <form method='post' action=''>

@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include "db_conn.php";
+include "../DB/db_conn.php";
 if (isset($_POST['uname']) && isset($_POST['psword']))
 {
   function validate($data){
@@ -12,12 +12,12 @@ if (isset($_POST['uname']) && isset($_POST['psword']))
   $uname=validate($_POST['uname']);
   $pass=validate($_POST['psword']);
   if(empty($uname)){
-    header("location: index.php?error=Username is required");
+    header("location: ../index.php?error=Username is required");
     exit();
   }
   else if(empty($pass))
   {
-    header("location: index.php?error=Password is required");
+    header("location: ../index.php?error=Password is required");
     exit();
   }
   else{
@@ -31,19 +31,19 @@ if (isset($_POST['uname']) && isset($_POST['psword']))
            $_SESSION['Username']=$row['Username'];
            $_SESSION['name']=$row['name'];
            $_SESSION['id']=$row['id'];
-           header("location: ../index.php");
+           header("location: ../Cart/index.php");
            exit();
         }
         
     }
     else{
-        header("location: index.php?error=Username or Password is incorrect");
+        header("location: ../index.php?error=Username or Password is incorrect");
         exit();
     }
   }
 }
 
 else{
-    header("location: index.php");
+    header("location: ../index.php");
     exit();
 }
