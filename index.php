@@ -20,7 +20,7 @@
         </p>
     <?php } ?>
         <form action="./Login/New_user.php" method="post">
-            <div class="signup">
+            <div class="signup slide-up">
                 <h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
                 <div class="form-holder">
                     <input type="text" class="input" name="uname" placeholder="Username" />
@@ -31,7 +31,7 @@
             </div>
         </form>
         <form action="./Login/login.php" method="post">
-            <div class="login slide-up">
+            <div class="login">
                 <div class="center">
                     <h2 class="form-title" id="login"><span>or</span>Log in</h2>
                     <div class="form-holder">

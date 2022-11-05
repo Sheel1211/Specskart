@@ -134,7 +134,7 @@ if (isset($_POST['code']) && $_POST['code'] != "") {
   <input type='hidden' name='code' value=" . $row['code'] . " />
   <div class='image'><img src='../" . $row['image'] . "' /></div>
   <div class='name'>" . $row['name'] . "</div>
-  <div class='price'>$" . $row['price'] . "</div>
+  <div class='price'>₹" . $row['price'] . "</div>
   <button type='submit' class='buy'>Buy Now</button>
   </form>
   </div>";
